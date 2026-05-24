@@ -1,0 +1,199 @@
+- generic [active] [ref=e1]:
+  - banner "Главная навигация" [ref=e2]:
+    - link "Lead Lab" [ref=e3] [cursor=pointer]:
+      - /url: "#top"
+      - generic [ref=e4]: LL
+      - generic [ref=e5]: Lead Lab
+    - navigation "Разделы лендинга" [ref=e6]:
+      - link "Методы" [ref=e7] [cursor=pointer]:
+        - /url: "#methods"
+      - link "Воронка" [ref=e8] [cursor=pointer]:
+        - /url: "#funnel"
+      - link "Доказательства" [ref=e9] [cursor=pointer]:
+        - /url: "#proof"
+      - link "Цены" [ref=e10] [cursor=pointer]:
+        - /url: "#pricing"
+    - link "Получить расчет" [ref=e11] [cursor=pointer]:
+      - /url: "#brief"
+  - main [ref=e12]:
+    - region "Lead Lab" [ref=e13]:
+      - generic [ref=e14]:
+        - generic [ref=e15]:
+          - paragraph [ref=e16]: AI + живые исполнители + базы конкурентов
+          - heading "Lead Lab" [level=1] [ref=e17]
+          - paragraph [ref=e18]: Лиды, которые уже проявили интерес.
+          - paragraph [ref=e19]: Находим целевую аудиторию, проверяем потребность в диалоге и передаем вашему отделу продаж не шум, а готовые контакты.
+          - generic "Основные действия" [ref=e20]:
+            - link "Разобрать мою нишу" [ref=e21] [cursor=pointer]:
+              - /url: "#brief"
+            - link "Посмотреть форматы" [ref=e22] [cursor=pointer]:
+              - /url: "#methods"
+        - generic "Визуализация обработки лидов" [ref=e23]:
+          - generic [ref=e24]:
+            - generic [ref=e25]: сырой контакт
+            - generic [ref=e26]: заявка конкурента
+            - generic [ref=e27]: теплая аудитория
+            - generic [ref=e28]: повторный интерес
+          - generic:
+            - generic: контакт
+            - generic: интерес
+            - generic: критерии
+            - generic: передан
+          - generic [ref=e29]:
+            - generic [ref=e30]: Когда планируете покупку?
+            - generic [ref=e31]: Сейчас. Нужна цена ниже рынка.
+            - generic [ref=e32]: Уточню город, бюджет и критерии.
+            - generic [ref=e33]: "Статус: интерес подтвержден"
+          - generic [ref=e37]: qualification
+          - generic [ref=e38]:
+            - generic [ref=e39]:
+              - generic [ref=e40]: Передача в работу
+              - strong [ref=e41]: 12%
+            - generic [ref=e42]:
+              - generic [ref=e43]: Олег
+              - generic [ref=e44]: Готов купить
+              - emphasis [ref=e45]: передан
+            - generic [ref=e46]:
+              - generic [ref=e47]: Мария
+              - generic [ref=e48]: Ждет расчет
+              - emphasis [ref=e49]: интерес
+            - generic [ref=e50]:
+              - generic [ref=e51]: Дмитрий
+              - generic [ref=e52]: Перезвон
+              - emphasis [ref=e53]: в работе
+      - generic "Ключевые показатели" [ref=e54]:
+        - generic [ref=e55]:
+          - strong [ref=e56]: 12 ₽
+          - generic [ref=e57]: от стоимости живого касания
+        - generic [ref=e58]:
+          - strong [ref=e59]: 3 000+
+          - generic [ref=e60]: контактов для AI-квалификации
+        - generic [ref=e61]:
+          - strong [ref=e62]: 1–2 недели
+          - generic [ref=e63]: до рабочей базы для продаж
+    - region "Быстро проверяем, кому из вашей целевой аудитории действительно актуально предложение." [ref=e64]:
+      - generic [ref=e65]: Что делает Lead Lab
+      - heading "Быстро проверяем, кому из вашей целевой аудитории действительно актуально предложение." [level=2] [ref=e66]
+      - paragraph [ref=e67]: "Вместо покупки абстрактной базы вы получаете слой предварительной обработки: касания, уточняющие вопросы, AI-анализ, статусы и комментарии для следующего шага."
+    - region "Под задачу можно включить людей, AI или готовый источник заявок." [ref=e68]:
+      - generic [ref=e69]:
+        - text: Три канала
+        - heading "Под задачу можно включить людей, AI или готовый источник заявок." [level=2] [ref=e70]
+      - generic [ref=e71]:
+        - article [ref=e72]:
+          - generic [ref=e73]: "01"
+          - generic [ref=e74]:
+            - heading "Живые касания" [level=3] [ref=e75]
+            - paragraph [ref=e76]: Исполнители пишут по согласованному сценарию и за 2–3 сообщения выявляют потребность, интерес или готовность получить материал.
+          - strong [ref=e77]: от 12 ₽/шт
+        - article [ref=e78]:
+          - generic [ref=e79]: "02"
+          - generic [ref=e80]:
+            - heading "AI-агенты" [level=3] [ref=e81]
+            - paragraph [ref=e82]: Агент ведет диалог по нужной воронке, задает квалифицирующие вопросы, анализирует ответы и передает контакт с причиной статуса.
+          - strong [ref=e83]: от 3 000 контактов
+        - article [ref=e84]:
+          - generic [ref=e85]: "03"
+          - generic [ref=e86]:
+            - heading "Горячие базы" [level=3] [ref=e87]
+            - paragraph [ref=e88]: "Собираем контакты из источников, где аудитория уже оставляла заявки: входящие и исходящие линии конкурентов, тематические площадки, формы."
+          - strong [ref=e89]: от 18 ₽/шт
+    - region "Из 100% сырой аудитории остается короткий список полезных контактов." [ref=e90]:
+      - generic [ref=e91]:
+        - text: Сужение базы
+        - heading "Из 100% сырой аудитории остается короткий список полезных контактов." [level=2] [ref=e92]
+        - paragraph [ref=e93]: Мы не обещаем, что каждый контакт купит. Мы убираем лишний шум до того, как он попадет к вашим менеджерам.
+      - generic "Схема сужения аудитории" [ref=e94]:
+        - generic [ref=e95]:
+          - generic [ref=e96]: 100%
+          - generic [ref=e97]: целевая аудитория
+        - generic [ref=e98]:
+          - generic [ref=e99]: 42%
+          - generic [ref=e100]: ответили или проявили реакцию
+        - generic [ref=e101]:
+          - generic [ref=e102]: 18%
+          - generic [ref=e103]: прошли уточняющий вопрос
+        - generic [ref=e104]:
+          - generic [ref=e105]: 10–12%
+          - generic [ref=e106]: полезны именно для вас
+    - region "Каждый лид получает контекст, а не сухую строку без смысла." [ref=e107]:
+      - generic [ref=e108]:
+        - generic [ref=e109]:
+          - text: Как это выглядит в работе
+          - heading "Каждый лид получает контекст, а не сухую строку без смысла." [level=2] [ref=e110]
+        - list [ref=e111]:
+          - listitem [ref=e112]:
+            - generic [ref=e113]: "01"
+            - paragraph [ref=e114]: Согласуем сегмент, оффер, стоп-слова и критерии полезного интереса.
+          - listitem [ref=e115]:
+            - generic [ref=e116]: "02"
+            - paragraph [ref=e117]: "Запускаем касания: люди или AI-агенты ведут диалог по короткой воронке."
+          - listitem [ref=e118]:
+            - generic [ref=e119]: "03"
+            - paragraph [ref=e120]: Фиксируем статус, комментарий, следующий шаг и причину квалификации.
+          - listitem [ref=e121]:
+            - generic [ref=e122]: "04"
+            - paragraph [ref=e123]: Передаем базу, которую менеджер может сразу брать в обзвон или переписку.
+    - region "Внутри процесса видны диалоги, статусы, причины и рабочие комментарии." [ref=e124]:
+      - generic [ref=e125]:
+        - text: Proof wall
+        - heading "Внутри процесса видны диалоги, статусы, причины и рабочие комментарии." [level=2] [ref=e126]
+      - generic [ref=e127]:
+        - 'figure "AI-анализ: причина статуса и критерии покупки Открыть" [ref=e128]':
+          - button "Открыть скриншот AI-анализа крупно" [ref=e129]:
+            - img "Обезличенный фрагмент интерфейса AI-квалификации" [ref=e130]
+          - generic [ref=e131]:
+            - text: "AI-анализ: причина статуса и критерии покупки"
+            - generic [ref=e132]: Открыть
+        - 'figure "Живое касание: короткий диалог до интереса Открыть" [ref=e133]':
+          - button "Открыть скриншот живого касания крупно" [ref=e134]:
+            - img "Обезличенный фрагмент переписки с заинтересованным клиентом" [ref=e135]
+          - generic [ref=e136]:
+            - text: "Живое касание: короткий диалог до интереса"
+            - generic [ref=e137]: Открыть
+        - 'figure "AI-агент: диалог идет по заданной воронке Открыть" [ref=e138]':
+          - button "Открыть скриншот AI-агента крупно" [ref=e139]:
+            - img "Обезличенный фрагмент переписки AI-агента с лидом" [ref=e140]
+          - generic [ref=e141]:
+            - text: "AI-агент: диалог идет по заданной воронке"
+            - generic [ref=e142]: Открыть
+    - region "Запускаем формат под объем и зрелость вашей воронки." [ref=e143]:
+      - generic [ref=e144]:
+        - text: Ориентиры по стоимости
+        - heading "Запускаем формат под объем и зрелость вашей воронки." [level=2] [ref=e145]
+      - generic [ref=e146]:
+        - article [ref=e147]:
+          - paragraph [ref=e148]: Быстрый тест
+          - heading "Живые рассылки" [level=3] [ref=e149]
+          - strong [ref=e150]: 12 ₽/контакт
+          - generic [ref=e151]: до 2 000 контактов, чтобы быстро увидеть реакцию рынка
+        - article [ref=e152]:
+          - paragraph [ref=e153]: Квалификация
+          - heading "AI-агенты" [level=3] [ref=e154]
+          - strong [ref=e155]: от 3 000 контактов
+          - generic [ref=e156]: 5 000 — 16 ₽/шт, 10 000 — 14 ₽/шт
+        - article [ref=e157]:
+          - paragraph [ref=e158]: Большие данные
+          - heading "База для обзвона" [level=3] [ref=e159]
+          - strong [ref=e160]: 18 ₽/контакт
+          - generic [ref=e161]: от 1 000 контактов, 5 000 — 85 000 ₽, 10 000 — 160 000 ₽
+    - region "Покажем, сколько интереса можно вытащить из вашей ниши." [ref=e162]:
+      - generic [ref=e163]:
+        - text: Финальный шаг
+        - heading "Покажем, сколько интереса можно вытащить из вашей ниши." [level=2] [ref=e164]
+        - paragraph [ref=e165]: Опишите продукт, регион и пример целевой аудитории. Мы предложим формат, объем и реалистичный способ проверки спроса.
+      - form "Заявка на расчет" [ref=e166]:
+        - generic [ref=e167]:
+          - generic [ref=e168]: Ниша или продукт
+          - textbox "Ниша или продукт" [ref=e169]:
+            - /placeholder: "Например: авто, обучение, дома"
+        - generic [ref=e170]:
+          - generic [ref=e171]: Где искать аудиторию
+          - textbox "Где искать аудиторию" [ref=e172]:
+            - /placeholder: Город, площадки, конкуренты
+        - generic [ref=e173]:
+          - generic [ref=e174]: Контакт для связи
+          - textbox "Контакт для связи" [ref=e175]:
+            - /placeholder: Telegram или телефон
+        - button "Получить расчет" [ref=e176] [cursor=pointer]
+        - status [ref=e177]
