@@ -20,6 +20,9 @@
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 96px;
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
 }
 
 body {
@@ -35,6 +38,8 @@ body {
     sans-serif;
   line-height: 1.5;
   letter-spacing: 0;
+  min-width: 320px;
+  overflow-x: clip;
 }
 
 body::selection {
@@ -47,9 +52,25 @@ a {
   text-decoration: none;
 }
 
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+section {
+  scroll-margin-top: 96px;
+}
+
 button,
 input {
   font: inherit;
+}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible {
+  outline: 2px solid var(--amber);
+  outline-offset: 4px;
 }
 
 .site-header {
@@ -180,6 +201,10 @@ input {
   margin: 0 auto;
 }
 
+.hero-copy {
+  min-width: 0;
+}
+
 .eyebrow,
 .section-label,
 .section-kicker span,
@@ -252,6 +277,7 @@ input {
   min-height: 640px;
   overflow: hidden;
   perspective: 1400px;
+  container: lead-stage / inline-size;
 }
 
 .lead-stage::before,
@@ -786,7 +812,7 @@ input {
 }
 
 .proof-dialog {
-  width: min(1180px, calc(100vw - 32px));
+  width: min(1180px, calc(100dvw - 32px));
   max-height: calc(100dvh - 32px);
   border: 1px solid rgba(247, 242, 232, 0.18);
   border-radius: 8px;
@@ -1018,7 +1044,85 @@ input {
   }
   100% {
     opacity: 0;
-    transform: translate3d(calc(100vw - 120px), 10px, 0) scale(0.78);
+    transform: translate3d(calc(100cqi - 120px), 10px, 0) scale(0.78);
+  }
+}
+
+@supports not (width: 1cqi) {
+  @keyframes leadConveyor {
+    0% {
+      opacity: 0;
+      transform: translate3d(0, 0, 0) scale(0.86);
+    }
+    12% {
+      opacity: 1;
+    }
+    48% {
+      transform: translate3d(44%, -16px, 0) scale(1);
+    }
+    72% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+      transform: translate3d(calc(100% - 120px), 10px, 0) scale(0.78);
+    }
+  }
+}
+
+@media (max-width: 1280px) {
+  .site-header {
+    gap: clamp(14px, 2vw, 24px);
+  }
+
+  .nav-links {
+    gap: clamp(14px, 2vw, 24px);
+  }
+
+  .dialog-stream {
+    right: clamp(14px, 4cqi, 44px);
+    left: clamp(24px, 12cqi, 108px);
+    width: auto;
+    max-width: 410px;
+  }
+
+  .message {
+    max-width: 100%;
+  }
+
+  .lab-core {
+    right: clamp(44px, 16cqi, 150px);
+  }
+
+  .mini-crm {
+    width: min(460px, calc(100% - 28px));
+  }
+
+  .pricing-grid {
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr));
+  }
+}
+
+@media (max-width: 1100px) {
+  .hero {
+    min-height: auto;
+  }
+
+  .hero-grid {
+    grid-template-columns: 1fr;
+    min-height: auto;
+    align-items: start;
+  }
+
+  .hero-copy {
+    max-width: 860px;
+  }
+
+  .lead-stage {
+    width: 100%;
+    max-width: 900px;
+    min-height: clamp(540px, 56vw, 640px);
+    margin-inline: auto;
   }
 }
 
@@ -1040,6 +1144,10 @@ input {
 
   .hero-grid {
     min-height: auto;
+  }
+
+  .hero-actions a {
+    min-height: 50px;
   }
 
   .lead-stage {
@@ -1067,9 +1175,38 @@ input {
   .proof-shot-wide {
     grid-column: auto;
   }
+
+  .funnel-bar {
+    width: 100% !important;
+    opacity: 1 !important;
+  }
+
+  .funnel-bar.result {
+    grid-template-columns: minmax(150px, max-content) minmax(0, 1fr);
+    min-height: 104px;
+  }
+
+  .funnel-bar.result b {
+    max-width: none;
+  }
+
+  .proof-shot img,
+  .proof-shot-wide img {
+    height: auto;
+    aspect-ratio: 16 / 10;
+    object-fit: cover;
+  }
 }
 
 @media (max-width: 640px) {
+  html {
+    scroll-padding-top: 78px;
+  }
+
+  section {
+    scroll-margin-top: 78px;
+  }
+
   .site-header {
     gap: 10px;
     padding: 14px 14px;
@@ -1089,6 +1226,11 @@ input {
     padding: 88px 14px 22px;
   }
 
+  .hero h1 {
+    font-size: clamp(58px, 18vw, 76px);
+    line-height: 0.88;
+  }
+
   .hero-statement {
     font-size: clamp(34px, 12vw, 52px);
   }
@@ -1098,22 +1240,26 @@ input {
   }
 
   .lead-stage {
-    min-height: 520px;
+    min-height: 560px;
+    margin-top: 14px;
     overflow: hidden;
   }
 
   .signal-column {
     left: 0;
-    width: 190px;
+    top: 118px;
+    width: min(190px, 58%);
   }
 
   .dialog-stream {
-    left: 46px;
-    width: calc(100vw - 70px);
+    top: 28px;
+    right: 0;
+    left: clamp(14px, 6vw, 46px);
+    width: auto;
   }
 
   .message {
-    max-width: 290px;
+    max-width: 100%;
     padding: 13px 14px;
     font-size: 14px;
   }
@@ -1132,9 +1278,19 @@ input {
     width: 100%;
   }
 
+  .crm-head {
+    padding: 12px 14px;
+  }
+
+  .crm-head strong {
+    font-size: 24px;
+  }
+
   .crm-row {
     grid-template-columns: 1fr;
     gap: 5px;
+    padding: 13px 14px;
+    font-size: 14px;
   }
 
   .crm-row em {
@@ -1155,6 +1311,13 @@ input {
     grid-template-columns: 1fr;
     gap: 8px;
     opacity: 1;
+    min-height: auto;
+    padding: 16px;
+  }
+
+  .funnel-bar.result {
+    grid-template-columns: 1fr;
+    min-height: auto;
   }
 
   .workflow-panel,
@@ -1164,11 +1327,92 @@ input {
 
   .proof-shot img,
   .proof-shot-wide img {
-    height: 280px;
+    aspect-ratio: 4 / 3;
   }
 
   .price-item {
     min-height: auto;
+  }
+}
+
+@media (max-width: 430px) {
+  .site-header {
+    padding: 14px 12px;
+  }
+
+  .header-action {
+    max-width: 74vw;
+    min-height: 42px;
+    padding: 0 12px;
+    font-size: 13px;
+  }
+
+  .hero-actions a,
+  .brief-form button {
+    width: 100%;
+  }
+
+  .hero-statement {
+    font-size: clamp(32px, 11vw, 44px);
+  }
+
+  .intro h2,
+  .section-kicker h2,
+  .funnel-copy h2,
+  .workflow-panel h2,
+  .pricing-head h2,
+  .brief-copy h2 {
+    font-size: clamp(31px, 9vw, 42px);
+  }
+
+  .lead-stage {
+    min-height: 590px;
+  }
+
+  .lab-core {
+    top: 288px;
+    right: 8px;
+    width: 118px;
+    height: 118px;
+  }
+
+  .method-item {
+    padding: 22px 18px;
+  }
+
+  .method-item p,
+  .price-item span {
+    font-size: 16px;
+  }
+
+  .workflow-steps li {
+    grid-template-columns: 42px 1fr;
+  }
+
+  .proof-shot figcaption {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .proof-dialog {
+    width: min(100%, calc(100dvw - 16px));
+    max-height: calc(100dvh - 16px);
+    padding: 8px;
+  }
+
+  .proof-dialog img {
+    max-height: calc(100dvh - 124px);
+  }
+}
+
+@media (min-width: 1600px) {
+  .hero-grid {
+    max-width: 1520px;
+  }
+
+  .hero h1 {
+    font-size: clamp(128px, 8vw, 168px);
   }
 }
 
