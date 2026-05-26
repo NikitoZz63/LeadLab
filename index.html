@@ -9,9 +9,9 @@
       content="Lead Lab привлекает и квалифицирует лиды через живые касания, AI-агентов и горячие базы конкурентов. От 12 рублей за контакт."
     >
     <link rel="icon" href="assets/leadlab-mark.svg" type="image/svg+xml">
-    <link rel="preload" href="styles.css?v=logo1" as="style">
-    <link rel="stylesheet" href="styles.css?v=logo1">
-    <script src="script.js?v=logo1" defer></script>
+    <link rel="preload" href="styles.css?v=tg1" as="style">
+    <link rel="stylesheet" href="styles.css?v=tg1">
+    <script src="script.js?v=tg1" defer></script>
   </head>
   <body>
     <header class="site-header" aria-label="Главная навигация">
@@ -320,18 +320,22 @@
             объем и реалистичный способ проверки спроса.
           </p>
         </div>
-        <form class="brief-form reveal" aria-label="Заявка на расчет">
-          <label>
+        <form class="brief-form reveal" action="/api/lead" method="post" aria-label="Заявка на расчет">
+          <label for="brief-product">
             <span>Ниша или продукт</span>
-            <input name="product" type="text" autocomplete="organization" placeholder="Например: авто, обучение, дома">
+            <input id="brief-product" name="product" type="text" autocomplete="organization" maxlength="160" enterkeyhint="next" placeholder="Например: авто, обучение, дома" required>
           </label>
-          <label>
+          <label for="brief-source">
             <span>Где искать аудиторию</span>
-            <input name="source" type="text" placeholder="Город, площадки, конкуренты">
+            <input id="brief-source" name="source" type="text" maxlength="220" enterkeyhint="next" placeholder="Город, площадки, конкуренты">
           </label>
-          <label>
+          <label for="brief-contact">
             <span>Контакт для связи</span>
-            <input name="contact" type="text" autocomplete="tel" placeholder="Telegram или телефон">
+            <input id="brief-contact" name="contact" type="text" autocomplete="tel" inputmode="text" maxlength="120" enterkeyhint="send" placeholder="Telegram или телефон" required>
+          </label>
+          <label class="form-honeypot" for="brief-website" aria-hidden="true">
+            <span>Сайт</span>
+            <input id="brief-website" name="website" type="text" tabindex="-1" autocomplete="off">
           </label>
           <button type="submit">Получить расчет</button>
           <p class="form-status" role="status" aria-live="polite"></p>

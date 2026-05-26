@@ -991,11 +991,35 @@ input:focus-visible {
   transition: transform 180ms ease;
 }
 
+.brief-form button:disabled {
+  cursor: wait;
+  opacity: 0.72;
+  transform: none;
+}
+
+.form-honeypot {
+  position: absolute;
+  clip-path: inset(50%);
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
 .form-status {
   min-height: 24px;
   margin: 0;
   color: var(--green);
   font-weight: 800;
+}
+
+.form-status[data-state="loading"] {
+  color: var(--amber);
+}
+
+.form-status[data-state="error"] {
+  color: #ff9b8f;
 }
 
 .reveal {

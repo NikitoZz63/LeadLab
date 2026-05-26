@@ -77,11 +77,55 @@ if (funnel) {
 
 const briefForm = document.querySelector(".brief-form");
 const formStatus = document.querySelector(".form-status");
+const briefSubmit = briefForm?.querySelector('button[type="submit"]');
 
-if (briefForm && formStatus) {
-  briefForm.addEventListener("submit", (event) => {
+function setFormStatus(message, state = "idle") {
+  if (!formStatus) return;
+  formStatus.textContent = message;
+  formStatus.dataset.state = state;
+}
+
+if (briefForm && formStatus && briefSubmit) {
+  briefForm.addEventListener("submit", async (event) => {
     event.preventDefault();
-    formStatus.textContent = "Заявка собрана. Осталось подключить ваш Telegram или CRM.";
+
+    if (!briefForm.reportValidity()) return;
+
+    const formData = new FormData(briefForm);
+    const payload = Object.fromEntries(formData.entries());
+
+    payload.page = window.location.href;
+
+    briefSubmit.disabled = true;
+    setFormStatus("Отправляем заявку...", "loading");
+
+    try {
+      const response = await fetch(briefForm.action, {
+        method: "POST",
+        headers: {
+          "Accept": "application/json",
+          "Content-Type": "application/json",
+        },
+        credentials: "same-origin",
+        body: JSON.stringify(payload),
+      });
+
+      const result = await response.json().catch(() => ({}));
+
+      if (!response.ok || !result.ok) {
+        throw new Error(result.message || "Не удалось отправить заявку.");
+      }
+
+      briefForm.reset();
+      setFormStatus(result.message || "Заявка отправлена. Мы свяжемся с вами.", "success");
+    } catch (error) {
+      setFormStatus(
+        "Не удалось отправить заявку. Попробуйте еще раз или напишите нам напрямую.",
+        "error",
+      );
+    } finally {
+      briefSubmit.disabled = false;
+    }
   });
 }
 
